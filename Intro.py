@@ -7,8 +7,6 @@ print("hola mundo")
 Comentario 
 multi linea 
 
-"""
-
 # ejercicio 
 
 Txt = input("Introduce un numero :")  # todo el texto que se pilla por el imput siempre es String
@@ -64,4 +62,29 @@ def sumayresta(a,b):
 resultado1, resultado2 = sumayresta(10,5)
 print("Los resultado son:\nSunma:" + str(resultado1) + "\nResta:" + str(resultado2))
 
+"""
+# Ejercicio 1 de funciones 
+def Esnumero (num):
+    if (type(num)==int):
+        return True
+    else:
+        return False
 
+def SacarMaximo (Num1, Num2):
+    # comprobar que numero es el mayor
+    if (Num1 > Num2):
+       print ("Numero " + str(Num1) + " es mayor que " + str(Num2))
+    elif (Num1 == Num2):
+       print ("Ambos numeros son iguales") 
+    else:
+       print ("Numero " + str(Num2) + " es mayor que " + str(Num1))
+
+Num1 = 55
+Num2 = 3
+
+if (Esnumero(Num1) and Esnumero(Num2)):
+    SacarMaximo (Num1,Num2)
+else:
+    print("una de las variables no es un numero")
+
+ 
