@@ -138,7 +138,7 @@ while(cont < 10):
     print(cont)
     cont += 1"""
 
-LetraEncontrada = False
+"""LetraEncontrada = False
 letra = "a"
 frase = "En este momento estoy buscando la letra a"
 indice = 0
@@ -149,7 +149,142 @@ while( not(LetraEncontrada)):
     else:
         indice += 1
 
-print (f"letra encontrada en posicion : {indice} ")
+print (f"letra encontrada en posicion : {indice} ")"""
+
+# Funciones reservadas de los bucles 
+# Break    --> parada para abandonar el bucle
+# Continue --> Saltamos a la siguiente iteracion del bucle
+"""letra = "a"
+frase = "buscando la letra a"
+count = 0
+
+for caracter in frase:
+    if (caracter == letra):
+        count +=1
+        print (f"- Letra Encontrada {count} veces.")
+        continue
+    print("No hemos encontrado nada.")"""
 
 
+# Pass     --> No hace nada con la iteracion (ni sale de la iteracion y tampoco sale del bucle)
+# solo se utiliza para dejar vacio una parte del codigo a la espera de ser completado. 
 
+def funciondeejemplo (Arg1,Arg2):
+    pass 
+    # en python no podriamos dejar vacia la definicion de una funcion.
+    # pero con esta instruccion podemos hacerlo y dejar la funcion definida pero sin codigo. 
+
+# Else    --> Se utiliza para ejecutar algo cuando termine el bucle, pero si por alguna
+# razon finaliza el bucle antes de su ultima iteracion, ya esta parte no se ejecuta 
+
+"""frase = "contando numero de caracteres de una frase"
+count = 0
+for caracter in frase:
+    count += 1
+    if (caracter == "l"): # si la frase contiene un caracter "l", salimos del bucle y no mostramos el contador
+        break
+else: # si el bucle termina todas las iteraciones entonces ejecutara esta parte. 
+    print(f"La frase tiene {count} caracteres")
+"""    
+
+# Listas
+
+""" 
+- Recordatorio para definir una lista 
+NomLista = [1,2,"hola",True]  # pueden tener elementos de todos los tipos, numericos, texto, booleanos y objetos. 
+
+- para acceder al contenido de la lista 
+valor = NomLista[0] --> en numero es el numero del elemento de la lista, empiezan en el cero. 
+
+- para obtener el numero de elementos de una lista 
+longitud = len(NomLista)
+
+- iterar en los elementos de una lista
+for num in NomLista:
+    print(num)
+
+# Indexado de las listas. 
+lista = ["dale","un","buen","like","crack"]
+ultimaposicion = lista[-1] # con los indices negatios podemos acceder desde el final a una lista ej: -1 al ultimo elemento, -2 al penultimo elemento, -3 al antepenultimo, etc
+penultimaposicion = lista[-2]
+
+# Sublistas 
+# cuando quieres obtener varios valores de una lista a la vez 
+# Hay que definir el limite inferior (En este caso 1 representa el segundo valor) y el limite superior (En este caso el 4 representa el tercer valor de la lista) recordar que la lista al empezar a contrar por cero hay que restar -1 para obtener que posicion es realmente
+Sublista = lista[1:4]  # ej: si imprimimos el resultado seria ["un","buen","like"]
+
+# con las sublistas podemos ir desde el comienzo de la lista hasta cierto elemento o al reves
+Sublista = lista[:4]  # desde el comienzo hasta el elmento numero 3 ["dale","un","buen","like"]
+Sublista = lista[2:]  # Desde el tercer elemento hasta el final     ["buen","like","crack"]
+
+# con las sublistas tambien se pueden utilizar indices negativos.
+Sublista = lista[-4:-1] # ej ["un","buen","like"]
+"""
+# comprobar si una lista contine o no un elemento 
+"""lista = ["dale","un","buen","like","crack"]
+palabra = "like"
+palabrados = "melocoton"
+
+if (palabra in lista):
+    print("La palabra pertenece a la lista")
+
+if (palabrados not in lista):
+    print("la palabra no esta en la lista")"""
+
+# modificar elementos de uan lista 
+"""
+lenguajes = ["c","java","python","javascript","Kotlin"]
+print(lenguajes)
+lenguajes[1] = "angular"
+print(lenguajes)
+lenguajes[0] = lenguajes[0] + "++"
+print(lenguajes)
+
+lenguajes[2:4] = ["anaconda","typescript"]
+print(lenguajes)"""
+
+# caso especial podemos sustituir un valor por varios valores 
+"""
+lenguajes = ["c","java","python","javascript","Kotlin","ruby","Rust"]
+print(lenguajes)
+lenguajes[4:5] = ["varios","Valores","Botella"] # En la posicion del elemento "Kotlin" es sustituido por los tres elemtentos ["varios","Valores","Botella"]
+print(lenguajes) # ['c', 'java', 'python', 'javascript', 'varios', 'Valores', 'Botella', 'ruby', 'Rust']
+"""
+# Metodos de las listas: Añadir elementos
+# En Python podmeos utilizar metodos con las listas.
+# Para ejecutar estos metodos: variableDeTipoLista.metodo()
+"""
+lenguajes = ["c","java","python","javascript","Kotlin","ruby","Rust"]
+print(lenguajes)
+lenguajes.insert(1,"C++")
+print(lenguajes)
+
+lenguajes.append("Typescript")
+print(lenguajes)
+
+lenguajesdos = ["Angular","Vue","React"]
+lenguajes.extend(lenguajesdos)
+print(lenguajes)
+print(lenguajesdos)
+"""
+# Metodos de las listas: Eliminar  elementos
+frutas = ["platano","kiwi","papaya","melocoton","cereza"]
+print(frutas)
+
+frutas.pop() # sin pasarle un indice, elimina el ultimo elemento de la lista
+print(frutas)
+
+elementoeliminado = frutas.pop(0) # con indice elimina el elemento señalado por el indice, en este caso el primero
+print(frutas)
+print(elementoeliminado) # como curiosidad el metodo pop retorna el elemento que elimina, por si lo queremos reutilizar. 
+
+frutas.remove("kiwi")
+print(frutas)
+
+del frutas[0]
+print(frutas)
+
+# Metodo para buscar en las listas
+frutas = ["platano","kiwi","papaya","melocoton","cereza"]
+indice = frutas.index("melocoton")
+print(indice)
